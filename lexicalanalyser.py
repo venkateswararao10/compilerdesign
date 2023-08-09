@@ -25,3 +25,28 @@ f=open('level1.tinyc','r')
 expression=f.read()
 for token in  lexer.tokenize(expression):
         print(f'type->{token.type} value->{token.value}')
+
+
+
+
+21VV1A0559@admincse-610-1110in:~/Compilerdesign/9aug2023$ python3 lexicalanalysis.py
+type->INT value->int
+type->MAIN value->main
+type->( value->(
+type->) value->)
+type->{ value->{
+type->INT value->int
+type->ID value->a
+type->; value->;
+type->ID value->a
+type->ASSIGN value->=
+type->ID value->b
+type->MUL value->*
+type->ID value->c
+type->DIVIDE value->/
+type->INTEGER value->8
+type->; value->;
+type->PRINT value->print
+type->ID value->a
+type->; value->;
+type->} value->}
