@@ -5,7 +5,7 @@ class callexer(Lexer):
         # String containing ignored characters (between tokens)
         ignore = ' \t' #r'[ ]+'
         # Other ignored patterns
-        ignore_comment = r'\#.*'
+        ignore_comment = r'\#.*' #r'[#]+' #r'[#]'
         ignore_newline = r'\n+'
         ID=r'[a-zA-z][a-zA-z0-9]*'
         ID['if']=IF
