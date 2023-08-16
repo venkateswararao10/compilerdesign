@@ -36,3 +36,13 @@ expression='''2-(4+9)+d-a
 4+5'''
 parser.parse(lexer.tokenize(expression))
 
+
+
+
+
+enter the d45
+enter the a32
+2
+7
+9
+
