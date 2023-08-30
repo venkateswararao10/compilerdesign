@@ -57,3 +57,13 @@ class parser(Parser):
 input=open(args.inputfile,'r')
 l=lexer()
 p=parser()
+p.parse(l.tokenize(input.read()))
+if args.o is None:
+        for token in l.tokenize(input.read()):
+                p.parse(l.tokenize(input.read()))
+else:
+        output=open(args.o[0],'a')
+        for token in l.tokenize(input.read()):
+                output.write(f"{p.parse(l.tokenize(input.read()))}")
+
+
