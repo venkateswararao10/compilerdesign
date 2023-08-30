@@ -1,0 +1,7 @@
+int main(){
+int a,b; # declaring variables
+a=40;
+b=a+5*4;
+print b;
+print a;
+}
