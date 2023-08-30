@@ -1,5 +1,6 @@
 from sly import Parser
 from lexicallevel1tinyc import level1
+import argparse
 class parser(Parser):
         tokens=level1.tokens
         literals=level1.literals
@@ -49,6 +50,10 @@ class parser(Parser):
                 pass
 lex=level1()
 par=parser()
+a=argparse.ArgumentParser()
+a.add_argument("inputfile")
+a.add_argument("-p",nargs=1)
+args=a.parse_args()
 expression='''int main(){
 int a;
 a=30;
@@ -56,4 +61,15 @@ b=a;
 print a;
 print b; }
 '''
-par.parse(lex.tokenize(expression))
+with open(args.inputfile,'r') as f:
+        if args.p is None:
+                        par.parse(lex.tokenize(f.read()))
+        else:
+                with open(args.p[0],'a') as g:
+                                g.write(f"{par.parse(lex.tokenize(f.read()))}")
+
+ python3 parserlevel1tinyc.py inputcode.TINYC -p output.txt
+30
+<class 'int'>
+30
+<class 'int'>
